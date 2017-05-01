@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://player/giant.gd" type="Script" id=1]
+[ext_resource path="res://player/giant.png" type="Texture" id=2]
+
+[node name="giant" type="Node2D"]
+
+z/z = 10
+script/script = ExtResource( 1 )
+speed = 1.0
+arm_range = 10000
+
+[node name="sprite" type="Sprite" parent="."]
+
+transform/rot = -3.6
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+offset = Vector2( -7.35961, -140.363 )
+
+[node name="hand_slot" type="Position2D" parent="."]
+
+transform/pos = Vector2( -36.969, -24.5174 )
+transform/rot = 67.8958
+
+[node name="cooldown" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.1
+one_shot = true
+autostart = false
+
+
