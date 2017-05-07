@@ -57,6 +57,7 @@ func _on_timer_timeout():
 		emit_signal('human_spawned')
 
 func _process(delta):
+	# Show / hide trees
 	var trees_size = trees.size()
 	var sep = 100 / trees_size
 	
@@ -80,8 +81,7 @@ func _process(delta):
 		damage -= delta * healing_factor
 	else:
 		var damage_p_tick = humans * delta * damage_factor
-		print(damage_p_tick * 60)
-		damage_p_tick = clamp(damage_p_tick, 0, 3)
+		damage_p_tick = clamp(damage_p_tick, 0, 5)
 		damage += damage_p_tick
 	
 	damage = clamp(damage, 0, 100)
@@ -102,6 +102,7 @@ func _process(delta):
 		label.hide()
 		remove_from_group('planets')
 		set_process(false)
+		timer.set_active(false)
 		
 		for child in get_children():
 			if child.is_in_group('humans'):

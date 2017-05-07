@@ -27,6 +27,7 @@ transform/pos = Vector2( 960, 540 )
 [node name="planet" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1152.46, 217.51 )
+damage_factor = 0.75
 
 [node name="planet1" parent="." instance=ExtResource( 4 )]
 
